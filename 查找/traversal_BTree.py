@@ -47,6 +47,18 @@ class BTree(object):
             self.res.append(root.data)
         return self.res
 
+    def bfs(self, root):
+        """广度优先遍历，层次遍历"""
+        queue = [root]
+        while queue:
+            cur = queue.pop(0)
+            self.res.append(cur.data)
+            if cur.left:
+                queue.append(cur.left)
+            if cur.right:
+                queue.append(cur.right)
+        return self.res
+
 
 if __name__ == '__main__':
     node_list = [1, 'null', 2, 3]
@@ -58,3 +70,5 @@ if __name__ == '__main__':
     print(BTree().pre_order_traversal(t))
     print(BTree().in_order_traversal(t))
     print(BTree().post_order_traversal(t))
+
+    print(BTree().bfs(t))
