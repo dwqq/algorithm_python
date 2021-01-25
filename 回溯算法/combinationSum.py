@@ -30,4 +30,4 @@ def combinationSum(nums, sum):
 
 
 if __name__ == '__main__':
-    print(combinationSum([2, 3, 4], 8))
+    print(combinationSum([1, 2, 5], 11))
